@@ -12,6 +12,7 @@ calcularValorTotal = function () {
     let valorTotal;
     let valorMenosDescuento;
     let ivaRedondeado;
+    let ivaRedondeadoFloat;
 
     //1. Recuperar el nombre del producto como String
     nombreProducto=recuperarTexto("txtProducto");
@@ -69,8 +70,10 @@ calcularValorTotal = function () {
 
             Si el caso de prueba es exitoso, hacer un commit
         */
-       mostrarTexto("lblValorIVA",ivaRedondeado);
+    mostrarTexto("lblValorIVA",ivaRedondeado);
     //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
+    ivaRedondeadoFloat=parseFloat(ivaRedondeado)
+    valorTotal=calcularTotal(valorSubtotal,valorDescuento,ivaRedondeadoFloat);
     //11. Mostrar el resultado en el componente lblTotal
     /*
         Caso de prueba: 
@@ -86,7 +89,7 @@ calcularValorTotal = function () {
 
                 Si el caso de prueba es exitoso, hacer un commit
        */
-            
+    mostrarTexto("lblTotal",valorTotal);
     //12. Mostrar un resumen en el componente lblResumen, si no existe debe agregarlo
     /*
         Ejemplo: 
