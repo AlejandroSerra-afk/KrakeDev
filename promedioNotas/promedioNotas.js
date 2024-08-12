@@ -13,4 +13,10 @@ calcularPromedioNotas=function(){
     promedio=calcularPromedio(nota1,nota2,nota3);
     promRedondeado=promedio.toFixed(2);
     mostrarTexto("lblPromedio",promRedondeado);
+
+    if(promRedondeado>7){
+        mostrarImagen("imgResultado","./gifs/exito.gif");
+    }else{
+        mostrarImagen("imgResultado","./gifs/fracaso.gif");
+    }
 }
