@@ -14,9 +14,17 @@ calcularPromedioNotas=function(){
     promRedondeado=promedio.toFixed(2);
     mostrarTexto("lblPromedio",promRedondeado);
 
-    if(promRedondeado>7){
-        mostrarImagen("imgResultado","./gifs/exito.gif");
-    }else{
+    if(promRedondeado<5 && promRedondeado>0){
         mostrarImagen("imgResultado","./gifs/fracaso.gif");
+        mostrarTexto("lblResultado","REPROBADO");
+    }else if(promRedondeado>=5 && promRedondeado<=8){
+        mostrarImagen("imgResultado","./gifs/exito.gif");
+        mostrarTexto("lblResultado","BUEN TRABAJO");
+    }else if(promRedondeado>8 && promRedondeado<=10){
+        mostrarImagen("imgResultado","./gifs/excelente.gif");
+        mostrarTexto("lblResultado","EXCELENTE");
+    }else{
+        mostrarImagen("imgResultado","./gifs/incorrecto.gif");
+        mostrarTexto("lblResultado","DATOS INCORRECTOS");
     }
 }
