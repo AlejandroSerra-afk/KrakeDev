@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="utilitarios.js"></script>
+        <script src="serviciosPuntoDeVenta.js"></script>
+        <script src="puntoDeVenta.js"></script>
+        <link href="puntoDeVenta.css"  rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="principal">
+            <div class="logoEscuela">
+                <img src="logoKrakeDev.png" width="80%" />
+            </div>
+
+            <div class="contenido">
+                <div class="titulo">
+                    PUNTO DE VENTA
+                </div>
+
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        PRODUCTO
+                    </div>
+                    <div>
+                        <input type="text" class="cajaTexto" id="txtProducto"/>
+                        <div class="error" id="lblErrorProducto"></div>
+                    </div>
+                </div>
+
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        CANTIDAD
+                    </div>
+                    <div>
+                        <input type="text" class="cajaTexto" id="txtCantidad"/>
+                        <div class="error" id="lblErrorCantidad"></div>
+                    </div>
+                </div>
+
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        PRECIO
+                    </div>
+                    <div>
+                        <input type="text" class="cajaTexto" id="txtPrecio"/>
+                        <div class="error" id="lblErrorPrecio"></div>
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <div class="contenedorBoton">
+                        <input type="button" value="TOTAL"
+                        class="estiloBoton" onclick="calcularValorTotal();" />
+                        <input type="button" value="LIMPIAR" 
+                        class="estiloBoton" onclick="limpiar()"/>
+                    </div>
+                </div>
+            </div>
+            <div class="areaResultado">
+                <div class="resultado">
+                    <div>
+                   
+                    </div>
+                    <div>
+                     
+                    </div>
+                </div>
+                <div class="resultado">
+                    <div>
+                        SUBTOTAL:
+                    </div>
+                    <div id="lblSubtotal">
+                        0.0
+                    </div>
+                </div>
+                <div class="resultado">
+                    <div>
+                        DESCUENTO:
+                    </div>
+                    <div id="lblDescuento">
+                        0.0
+                    </div>
+                </div>
+                <div class="resultado">
+                    <div>
+                        IVA 12%:
+                    </div>
+                    <div id="lblValorIVA">
+                        0.0
+                    </div>
+                </div>
+                <div class="resultado">
+                    <div>
+                        TOTAL:
+                    </div>
+                    <div id="lblTotal">
+                        0.0
+                    </div>
+                </div>
+                <div class="resultado">
+                    <div>
+                   
+                    </div>
+                    <div>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body> 
+</html>
+
