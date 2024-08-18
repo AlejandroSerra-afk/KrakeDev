@@ -112,6 +112,25 @@ obtenerTipoVehiculo=function(placa){
     return tipoVehiculo
 }
 
+obtenerDiaPicoYPlaca=function(placa){
+    let ultimaPosicion= placa.length -1;
+    let UltimoCaracter=placa.charAt(ultimaPosicion);
+    let diaPicoYPlaca;
+
+    if(UltimoCaracter==1 || UltimoCaracter==2){
+        diaPicoYPlaca="Lunes"
+    }else if(UltimoCaracter==3 || UltimoCaracter==4){
+        diaPicoYPlaca="Martes"
+    }else if(UltimoCaracter==5 || UltimoCaracter==6){
+        diaPicoYPlaca="Miercoles"
+    }else if(UltimoCaracter==7 || UltimoCaracter==8){
+        diaPicoYPlaca="Jueves"
+    }else if(UltimoCaracter==9 || UltimoCaracter==0){
+        diaPicoYPlaca="Viernes"
+    }
+    return diaPicoYPlaca
+}
+
 validarPrimerCaracter=function(caracter){
     if(esMayuscula(caracter)){
         errorPrimerCaracter=""
