@@ -38,6 +38,61 @@ validarEstructura=function(placa){
     return errorConcatenado;
 }
 
+obtenerProvincia=function(placa){
+    let provincia;
+    let primerCaracter=placa.charAt(0);
+    if(primerCaracter=="A"){
+        provincia="Azuay"
+    }else if(primerCaracter=="B"){
+        provincia="Bolivar"
+    }else if(primerCaracter=="U"){
+        provincia="Cañar"
+    }else if(primerCaracter=="C"){
+        provincia="Carchi"
+    }else if(primerCaracter=="X"){
+        provincia="Cotopaxi"
+    }else if(primerCaracter=="H"){
+        provincia="Chimborazo"
+    }else if(primerCaracter=="O"){
+        provincia="El Oro"
+    }else if(primerCaracter=="E"){
+        provincia="Esmeraldas"
+    }else if(primerCaracter=="W"){
+        provincia="Galapagos"
+    }else if(primerCaracter=="G"){
+        provincia="Guayas"
+    }else if(primerCaracter=="I"){
+        provincia="Imbabura"
+    }else if(primerCaracter=="L"){
+        provincia="Loja"
+    }else if(primerCaracter=="R"){
+        provincia="Los Rios"
+    }else if(primerCaracter=="M"){
+        provincia="Manabi"
+    }else if(primerCaracter=="V"){
+        provincia="Morona Santiago"
+    }else if(primerCaracter=="N"){
+        provincia="Napo"
+    }else if(primerCaracter=="S"){
+        provincia="Pastaza"
+    }else if(primerCaracter=="P"){
+        provincia="Pichincha"
+    }else if(primerCaracter=="K"){
+        provincia="Sucumbios"
+    }else if(primerCaracter=="Q"){
+        provincia="Orellana"
+    }else if(primerCaracter=="T"){
+        provincia="Tungurahua"
+    }else if(primerCaracter=="Z"){
+        provincia="Zamora Chinchipe"
+    }else if(primerCaracter=="Y"){
+        provincia="Santa Elena"
+    }else{
+        provincia=null
+    }
+    return provincia
+}
+
 validarPrimerCaracter=function(caracter){
     if(esMayuscula(caracter)){
         errorPrimerCaracter=""
