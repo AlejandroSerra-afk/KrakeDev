@@ -28,3 +28,12 @@ validarPlaca=function(){
         mostrarTexto("lblErrores", erroresEstructura)
     }
 }
+
+limpiar=function(){
+    mostrarTextoEnCaja("txtPlaca","")
+    mostrarTexto("lblValido","");
+    mostrarTexto("lblErrores","");
+    mostrarTexto("lblTipoVehiculo","");
+    mostrarTexto("lblDiaPicoYPlaca","");
+    mostrarTexto("lblProvincia","");
+}
