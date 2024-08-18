@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="utilitarios.js"></script>
+        <script src="serviciosPlacas.js"></script>
+        <script src="placas.js"></script>
+        <script src="utilitariosCadenas.js"></script>
+        <link href="placas.css"  rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="principal">
+            
+            <div class="contenido">
+                <div class="titulo">
+                    INFORMACION DE LA PLACA DE UN AUTO
+                </div>
+
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        INGRESE LA PLACA
+                    </div>
+                    <div>
+                        <input type="text" class="cajaTexto" id="txtPlaca"/>
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <div class="contenedorBoton">
+                        <input type="button" value="VALIDAR"
+                        class="estiloBoton" onclick="validarPlaca();" />
+                    </div>
+                </div>
+            </div>
+            <div class="areaResultado">
+                <div class="resultado">
+                    <div>
+                   
+                    </div>
+                    <div>
+                     
+                    </div>
+                </div>
+                <div class="resultado">
+
+                    <div id="lblValido">
+                        
+                    </div>
+                </div>
+                <div class="resultado">
+                    <div>
+                        
+                    </div>
+                    <div>
+                    
+                    </div>
+                </div>
+                <div class="error">
+
+                    <div id="lblErrores">
+                        
+                    </div>
+                </div>
+                <div class="resultado">
+                    <div>
+                   
+                    </div>
+                    <div>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
