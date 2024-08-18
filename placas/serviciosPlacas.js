@@ -93,6 +93,25 @@ obtenerProvincia=function(placa){
     return provincia
 }
 
+obtenerTipoVehiculo=function(placa){
+    let tipoVehiculo;
+    let segundoCaracter=placa.charAt(1);
+    if(segundoCaracter=="A" || segundoCaracter=="Z"){
+        tipoVehiculo="Vehiculo Comercial"
+    }else if(segundoCaracter=="E"){
+        tipoVehiculo="Vehiculo Gubernamental"
+    }else if(segundoCaracter=="X"){
+        tipoVehiculo="Vehiculo De Uso Oficial"
+    }else if(segundoCaracter=="S"){
+        tipoVehiculo="Vehiculo Del Gobierno Provincial"
+    }else if(segundoCaracter=="M"){
+        tipoVehiculo="Vehiculo Municipal"
+    }else{
+        tipoVehiculo="Vehiculo Particular"
+    }
+    return tipoVehiculo
+}
+
 validarPrimerCaracter=function(caracter){
     if(esMayuscula(caracter)){
         errorPrimerCaracter=""
