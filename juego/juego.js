@@ -16,5 +16,21 @@ jugar=function(seleccionado){
         puntosUsusario=puntosUsusario+1;
     }
     mostrarTexto("lblPuntajeUsuario","Puntaje del Usuario: "+puntosUsusario)
-        mostrarTexto("lblPuntajeComputador","Puntaje del Computador: "+puntosComputador)
+    mostrarTexto("lblPuntajeComputador","Puntaje del Computador: "+puntosComputador)
+    if(puntosUsusario==5){
+        mostrarTexto("lblResultado","HAS GANADO EL JUEGO")
+    }else if(puntosComputador==5){
+        mostrarTexto("lblResultado","EL COMMPUTADOR TE HA VENCIDO")
+    }
+
+}
+
+limpiar=function(){
+    puntosUsusario=0;
+    puntosComputador=0;
+    mostrarTexto("lblPuntajeUsuario","Puntaje del Usuario: "+puntosUsusario)
+    mostrarTexto("lblPuntajeComputador","Puntaje del Computador: "+puntosComputador)
+    mostrarTexto("lblResultado","")
+    mostrarImagen("imgElemento","");
+
 }
