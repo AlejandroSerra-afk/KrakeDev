@@ -33,3 +33,17 @@ guardarPalabra=function(){
     }
     console.log(palabraSecreta);
 }
+
+mostrarLetra=function(letra,posicion){
+    if(posicion==0){
+        mostrarTexto(letra,"div0")
+    }else if(posicion==1){
+        mostrarTexto(letra,"div1")
+    }else if(posicion==2){
+        mostrarTexto(letra,"div2")
+    }else if(posicion==3){
+        mostrarTexto(letra,"div3")
+    }else if(posicion==4){
+        mostrarTexto(letra,"div4")
+    }
+}
