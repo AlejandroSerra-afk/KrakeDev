@@ -47,3 +47,15 @@ mostrarLetra=function(letra,posicion){
         mostrarTexto(letra,"div4")
     }
 }
+
+validar=function(letra){
+    let letrasEncontradas=0;
+    let caracter;
+    for (let i = 0; i < palabraSecreta.length; i++) {
+        caracter = palabra.charAt(i);
+        if(letra==caracter){
+            mostrarLetra(letra,i);
+            letrasEncontradas++;
+        }
+    }
+}
