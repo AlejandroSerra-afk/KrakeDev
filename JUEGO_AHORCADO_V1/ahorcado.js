@@ -75,10 +75,10 @@ ingresarLetra=function(){
         validar(letra)
         intentos++;
         if(coincidencias==5){
-            alert("HA GANADO")
+            mostrarImagen("ahorcadoImagen","ganador.gif")
         }else{
             if(intentos==10){
-                alert("HA PERDIDO")
+                mostrarImagen("ahorcadoImagen","gameOver.gif")
             }
         }
     }else{
