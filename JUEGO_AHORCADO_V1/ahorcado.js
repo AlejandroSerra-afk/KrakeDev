@@ -36,15 +36,15 @@ guardarPalabra=function(){
 
 mostrarLetra=function(letra,posicion){
     if(posicion==0){
-        mostrarTexto(letra,"div0")
+        mostrarTexto("div0",letra)
     }else if(posicion==1){
-        mostrarTexto(letra,"div1")
+        mostrarTexto("div1",letra)
     }else if(posicion==2){
-        mostrarTexto(letra,"div2")
+        mostrarTexto("div2",letra)
     }else if(posicion==3){
-        mostrarTexto(letra,"div3")
+        mostrarTexto("div3",letra)
     }else if(posicion==4){
-        mostrarTexto(letra,"div4")
+        mostrarTexto("div4",letra)
     }
 }
 
@@ -52,10 +52,19 @@ validar=function(letra){
     let letrasEncontradas=0;
     let caracter;
     for (let i = 0; i < palabraSecreta.length; i++) {
-        caracter = palabra.charAt(i);
+        caracter = palabraSecreta.charAt(i);
         if(letra==caracter){
             mostrarLetra(letra,i);
             letrasEncontradas++;
         }
+    }
+}
+
+ingresarLetra=function(){
+    let letra=recuperarTexto("txtLetra");
+    if (esMayuscula(letra)){
+        validar(letra)
+    }else{
+        alert("SOLO SE ACEPTAN MAYUSCULAS")
     }
 }
