@@ -78,21 +78,28 @@ body{
     align-items: center;
     justify-content: center;
 }
-tbody tr:nth-child(odd) {
-    background-color: #908efc;
+
+  
+  th{
+    background-color: chartreuse;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
   
-  tbody tr:nth-child(even) {
-    background-color: #6a51cf;
+  tbody tr{
+    background-color: rgb(105, 205, 105);
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
-  
-  tbody tr {
-    background-image: url(noise.png);
+
+  tbody tr:hover {
+    background-color: rgb(79, 140, 79);
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
   
   table {
     background-color: #0b0c0c;
     width: 100%;
+    font-family: sans-serif;
+    border-radius: 10px;
   }
   td{
     text-align: center;
