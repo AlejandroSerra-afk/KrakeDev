@@ -3,7 +3,51 @@ let empleados = [
     {cedula:"0914632123",nombre:"Luisa",apellido:"Gonzalez",sueldo:900.0},
     {cedula:"2564891256",nombre:"Mario",apellido:"Ferrel",sueldo:700.0}
 ]
+let roles=[]
 let esNuevo=false;
+
+guardarRol=function(){
+    let rol={};
+    let totalPagar=recuperarTextoDiv("infoPago");
+    let aporteEmpleado=recuperarTextoDiv("infoIESS");
+    let nombre=recuperarTextoDiv("infoNombre");
+    let cedula=recuperarTextoDiv("infoCedula");
+    let sueldo=recuperarTextoDiv("infoSueldo");
+    let aporteEmpleador=calcularAporteEmpleador(sueldo);
+    rol.cedula=cedula;
+    rol.nombre=nombre;
+    rol.sueldo=sueldo;
+    rol.valorAPagar=totalPagar;
+    rol.aporteEmpleado=aporteEmpleado;
+    rol.aporteEmpleador=aporteEmpleador;
+    agregarRol(rol);
+    alert("ROL GUARDADO EXITOSAMENTE. ");
+    deshabilitarComponente("botonGuardar");
+}
+
+buscarRol=function(cedula){
+    let rolIterado;
+    let rolEncontrado=null;
+    for(let i=0;i<roles.length;i++){
+        rolIterado=roles[i];
+        if (rolIterado.cedula==cedula){
+            rolEncontrado=rolIterado;
+        }
+    }
+    return rolEncontrado
+}
+agregarRol=function(rol){
+    let rolEncontrado=buscarRol(rol.cedula);
+    if(rolEncontrado==null){
+        roles.push(rol);
+    }
+}
+
+calcularAporteEmpleador=function(sueldo){
+    let aporteEmpleador=sueldo*11.15/100;
+    return aporteEmpleador
+}
+
 
 buscarPorRol=function(){
     let cedula=recuperarTexto("txtBusquedaCedulaRol");
@@ -36,6 +80,7 @@ calcularRol=function(){
             mostrarTexto("infoIESS",aporte);
             let totalPagar=calcularValorAPagar(sueldo,aporte,valorDescuento);
             mostrarTexto("infoPago",totalPagar);
+            habilitarComponente("btnGuardarRol");
         }
     }
 }
@@ -150,6 +195,7 @@ mostrarOpcionRol=function(){
     mostrarComponente("divRol");
     ocultarComponente("divEmpleado")
     ocultarComponente("divResumen")
+    deshabilitarComponente("btnGuardarRol");
 }
 mostrarOpcionResumen=function(){
     mostrarComponente("divResumen");
