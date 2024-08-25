@@ -7,14 +7,36 @@ let esNuevo=false;
 
 buscarPorRol=function(){
     let cedula=recuperarTexto("txtBusquedaCedulaRol");
-    let empleadoEncontrado;
-    empleadoEncontrado=buscarEmpleado(cedula)
+    let empleadoEncontrado=buscarEmpleado(cedula);
     if(empleadoEncontrado!=null){
         mostrarTexto("infoCedula",empleadoEncontrado.cedula);
         mostrarTexto("infoNombre",empleadoEncontrado.nombre+" "+empleadoEncontrado.apellido);
         mostrarTexto("infoSueldo",empleadoEncontrado.sueldo);
     }else{
         alert("EL EMPLEADO NO EXISTE")
+    }
+}
+
+calcularAporteEmpleado=function(sueldo){
+    let aporte=sueldo*9.45/100;
+    return aporte;
+}
+
+calcularValorAPagar=function(sueldo,aporteIESS,descuento){
+    let valorAPagar=sueldo-aporteIESS-descuento;
+    return valorAPagar
+}
+
+calcularRol=function(){
+    let sueldo=recuperarFloatDiv("infoSueldo");
+    let valorDescuento=recuperarFloat("txtDescuentos");
+    if( valorDescuento != isNaN(valorDescuento)){
+        if(valorDescuento>=0 && valorDescuento<=sueldo){
+            let aporte=calcularAporteEmpleado(sueldo);
+            mostrarTexto("infoIESS",aporte);
+            let totalPagar=calcularValorAPagar(sueldo,aporte,valorDescuento);
+            mostrarTexto("infoPago",totalPagar);
+        }
     }
 }
 
