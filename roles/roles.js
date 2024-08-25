@@ -38,7 +38,15 @@ guardar=function(){
             }   
         }
     }
+}
 
+limpiar=function(){
+    esNuevo==false
+    deshabilitarIngreso();
+    mostrarTexto("lblErrorCedula","");
+    mostrarTexto("lblErrorNombre","");
+    mostrarTexto("lblErrorApellido","");
+    mostrarTexto("lblErrorSueldo","");
 }
 
 agregarEmpleado=function(empleado){
