@@ -5,11 +5,24 @@ let empleados = [
 ]
 let esNuevo=false;
 
+buscarPorRol=function(){
+    let cedula=recuperarTexto("txtBusquedaCedulaRol");
+    let empleadoEncontrado;
+    empleadoEncontrado=buscarEmpleado(cedula)
+    if(empleadoEncontrado!=null){
+        mostrarTexto("infoCedula",empleadoEncontrado.cedula);
+        mostrarTexto("infoNombre",empleadoEncontrado.nombre+" "+empleadoEncontrado.apellido);
+        mostrarTexto("infoSueldo",empleadoEncontrado.sueldo);
+    }else{
+        alert("EL EMPLEADO NO EXISTE")
+    }
+}
+
 guardar=function(){
     let cedula=recuperarTexto("txtCedula");
     let nombre=recuperarTexto("txtNombre");
     let apellido=recuperarTexto("txtApellido");
-    let sueldo= recuperarFloat("txtSueldo");
+    let sueldo= recuperarTexto("txtSueldo");
     let nuevo;
     if(validarCedula(cedula) & validarNombre(nombre) & validarApellido(apellido) & validarSueldo(sueldo)){
         if(esNuevo==true){
@@ -211,13 +224,16 @@ validarApellido=function(apellido){
 }
 validarSueldo=function(sueldo){
     let sueldoValido=false;
-    if(isNaN(sueldo)){
-        mostrarTexto("lblErrorSueldo","Debe ingresar obligatoriamente un numero entre 400 y 5000. ")
+    let sueldoFloat=parseFloat(sueldo);
+    if(sueldo==""){
+        mostrarTexto("lblErrorSueldo","Campo obligatorio. ")
+    }else if(isNaN(sueldoFloat)){
+        mostrarTexto("lblErrorSueldo","Debe ingresar un numero entre 400 y 5000. ")
     }else{
-        if(sueldo<400){
+        if(sueldoFloat<400){
             mostrarTexto("lblErrorSueldo","El sueldo debe ser minimo de 400$. ")
             sueldoValido=false;
-        }else if (sueldo>5000){
+        }else if (sueldoFloat>5000){
             mostrarTexto("lblErrorSueldo","El sueldo debe ser maximo de 5000$. ")
             sueldoValido=false;
         }else{
