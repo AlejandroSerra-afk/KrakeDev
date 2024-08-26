@@ -20,6 +20,8 @@ mostrarTotales=function(){
     mostrarTexto("infoTotalPago",totalAPagar);
     mostrarTexto("infoAporteEmpresa",totalEmpleador);
     mostrarTexto("infoAporteEmpleado",totalEmpleado);
+    let totalNomina=totalEmpleado+totalEmpleador+totalAPagar;
+    mostrarTexto("infoTotalNomina",totalNomina);
     mostrarRoles();
 }
 
@@ -155,6 +157,7 @@ guardar=function(){
                     alert("EMPLEADO MODIFICADO EXITOSAMENTE");
                     mostrarEmpleados();
                     deshabilitarIngreso();
+                    mostrarTextoEnCaja("txtBusquedaCedula","");
                 }
             }   
         }
