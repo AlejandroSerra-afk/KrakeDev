@@ -19,6 +19,22 @@ agregarPersona=function(){
 
 }
 
+mostrarPersonas=function(){
+    let cmpTabla=document.getElementById("tablaResumen");
+    let contenidoTabla="<table><tr>"+
+    "<th>EDAD</th>"+
+    "<th>NOMBRE</th>"+
+    "</tr>";
+    let elementoPersona;
+    for (let i=0;i<personas.length;i++){
+        elementoPersona=personas[i];
+        contenidoTabla+="<tr><td>"+elementoPersona.edad+"</td>"+
+        "<td>"+elementoPersona.nombre+"</td>"+
+        "</tr>"
+    }
+    contenidoTabla+="</table>"
+    cmpTabla.innerHTML=contenidoTabla
+}
 
 validarNombre=function(nombre){
     let tamanio = nombre.length;
