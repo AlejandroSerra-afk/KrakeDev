@@ -13,7 +13,7 @@
 
             <div class="contenido">
                 <div class="titulo">
-                    Orden
+                    Orden de Personas
                 </div>
 
                 <div class="ingresoDatos">
@@ -39,14 +39,31 @@
                 <div class="botones">
                     <div class="contenedorBoton">
                         <input type="button" value="GUARDAR"
-                        class="estiloBoton" onclick="calcularValorTotal();" />
-                        <input type="button" value="LIMPIAR" 
-                        class="estiloBoton" onclick="limpiar()"/>
+                        class="estiloBoton" onclick="agregarPersona();" />
+                        <input type="button" value="ENCONTRAR MAYOR" 
+                        class="estiloBoton" onclick="determinarMayor();"/>
+                        <input type="button" value="ENCONTRAR MENOR" 
+                        class="estiloBoton" onclick="determinarMenor();"/>
                     </div>
                 </div>
             </div>
-            <div  id="tablaResumen"class="areaResultado">
-                
+            <div class="areaResultado">
+                <div id="tablaResumen">
+                </div>
+                <div class="resultado">
+                    <div>
+                        PERSONA MAYOR: . 
+                    </div>
+                    <div id="lblMayor">
+                    </div>
+                </div>
+                <div class="resultado">
+                    <div>
+                        PERSONA MENOR: . 
+                    </div>
+                    <div id="lblMenor">
+                    </div>
+                </div>
             </div>
         </div>
     </body> 
