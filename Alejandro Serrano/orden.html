@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="utilitarios.js"></script>
+        <script src="orden.js"></script>
+        <link href="orden.css"  rel="stylesheet"/>
+    </head>
+    <body onload="mostrarPersonas();">
+        <div class="principal">
+            <div class="logoPagina">
+                <img src="orden.png" width="80%" />
+            </div>
+
+            <div class="contenido">
+                <div class="titulo">
+                    Orden
+                </div>
+
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        NOMBRE
+                    </div>
+                    <div>
+                        <input type="text" class="cajaTexto" id="txtNombre"/>
+                        <div class="error" id="lblErrorNombre"></div>
+                    </div>
+                </div>
+
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        EDAD
+                    </div>
+                    <div>
+                        <input type="text" class="cajaTexto" id="txtEdad"/>
+                        <div class="error" id="lblErrorEdad"></div>
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <div class="contenedorBoton">
+                        <input type="button" value="GUARDAR"
+                        class="estiloBoton" onclick="calcularValorTotal();" />
+                        <input type="button" value="LIMPIAR" 
+                        class="estiloBoton" onclick="limpiar()"/>
+                    </div>
+                </div>
+            </div>
+            <div  id="tablaResumen"class="areaResultado">
+                
+            </div>
+        </div>
+    </body> 
+</html>
