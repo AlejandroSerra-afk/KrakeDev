@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="gestionEstudiante_Alejandro_Serrano.js"></script>
+        <link href="gestionEstudiante_Alejandro_Serrano.css" rel="styleSheet"><link/>
+    </head>
+    <body onload="refrescarEstudiante();">
+        <div class="principal">
+            <div class="ingresoDatos">
+            <div>
+                <div>Nombre</div>
+                <input id="txtNombre" type="text" class="cajaTexto"/>
+            </div>
+            <div>
+                <div>Curso</div>
+                <input id="txtCurso" type="text" class="cajaTexto"/>
+            </div>
+            <div>
+                <div>Matricula</div>
+                <input id="txtMatricula" type="text" class="cajaTexto"/>
+            </div>
+            </div>
+            <div>
+                <input type="button" value="GUARDAR" onclick="agregarEstudiante();" class="estiloBoton"/>
+                <input type="button" value="REFRESCAR ESTUDIANTES" onclick="refrescarEstudiante();" class="estiloBoton"/>
+            </div>
+            <div class="mostrado">
+                <div class="buscar">
+                <div>Identificador</div>
+                <input type="text" id="txtIdentificador" class="cajaTexto"/>
+                <div>
+                    <input type="button" value="BUSCAR" onclick="buscarEstudiante();" class="estiloBoton"/>
+                </div>
+                </div>
+                <div class="mostrar">
+                <div id="tablaEstudiantes">
+    
+                </div>
+                <div>
+                    <img src="logoKrakeDev.png" width="300px"/>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </body>
+</html>
